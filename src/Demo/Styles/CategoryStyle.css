@@ -1,0 +1,155 @@
+@media only screen and (max-width: 768px) {
+  .wrap-container {
+    flex-direction: row;
+    display: flex;
+    transition: transform 1s;
+    transform: none;
+  }
+  .container  {
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+  }
+}
+
+.layout-container {
+  min-width: 375px;
+  margin: auto;
+  overflow: hidden;
+  width: 100%; 
+}
+
+.wrap-container {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 3rem;
+}
+.category-box-detail {
+  padding: 0.75rem 1rem 1rem;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dde3e7;
+  margin-bottom: 0.5rem;
+}
+.ordered-list {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #ff3e3e;
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: white;
+  font-weight: 700;
+  align-items: center;
+  margin-right: 1rem;
+}
+.icon-category {
+  margin-right: 1rem;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.mobile {
+  width: 100%;
+}
+.catergory-view {
+  flex: 1;
+}
+.category-title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #454f57;
+  line-height: 20px;
+}
+.category-desc {
+  font-size: 0.875rem;
+  color: #454f57;
+  line-height: 20px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.detail-content {
+  display: flex;
+  flex-direction: row;
+}
+.header-col-content {
+  padding-bottom: 0.65rem;
+  font-size: 0.75rem;
+  color: #454f57;
+  line-height: 20px;
+  font-weight: 600;
+}
+.col-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.75rem;
+}
+.col-title {
+  color: #9ba4ab;
+  font-size: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+.col-detail {
+  color: #172633;
+  font-size: 0.875rem;
+  line-height: 12px;
+  font-weight: 600;
+}
+.slide-area {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  position: absolute;
+  top: 225px;
+  left: 4rem;
+  right: 4rem;
+  
+}
+.space-area {
+  width: 100%;
+}
+.button-area {
+  display: flex;
+  align-items: center;
+  width: 24px;
+  justify-content: center;
+}
+
+/* Mobile config */
+.top-area-mobile {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.top-area-mobile-title {
+  margin-right: 24px;
+}
+.border-col {
+  border-left: 3px solid;
+  padding-left: 0.5rem;
+}
+.indicator-view {
+  flex-direction: row;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  
+}
+.dot-indicator {
+  background-color: #dde3e7;
+  width: 8px;
+  height: 8px;
+  margin: 0 10px;
+  border-radius: 4px;
+}
+.selected {
+  background-color: #ff3e3e;
+}
