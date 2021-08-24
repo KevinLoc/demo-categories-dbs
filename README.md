@@ -1,2 +1,2 @@
-# demo-categories-dbs
+# DBS Demo
 Display How it works cards
