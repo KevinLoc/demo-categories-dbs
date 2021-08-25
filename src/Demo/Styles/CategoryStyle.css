@@ -21,6 +21,7 @@
 
 .wrap-container {
   overflow: hidden;
+  width: 100%;
 }
 
 .container {

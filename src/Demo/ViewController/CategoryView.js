@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/CategoryStyle.css';
-import {
-  categoriesData,
-  detailCategories,
-  colors,
-} from '../ViewModel/DataMockup';
+import { categoriesData } from '../ViewModel/DataMockup';
 import useWindowSize from '../Utils/useWindowSize';
 import { ReactComponent as LeftArrow } from '../Icons//leftArrow.svg';
 import { ReactComponent as RightArrow } from '../Icons//rightArrow.svg';
@@ -74,52 +70,59 @@ const Category = () => {
     ));
   };
 
+  const renderIndicator = () => {
+    return (
+      <div className='indicator-view'>
+        {categories.map((id, index) => (
+          <div
+            key={index}
+            className={
+              currentIndex === index
+                ? 'dot-indicator selected'
+                : 'dot-indicator'
+            }
+          ></div>
+        ))}
+      </div>
+    );
+  };
+
+  const renderArrowItem = (isLeftArrow) => {
+    return (
+      <div className='button-area'>
+        <a
+          href='#'
+          onClick={() => (isLeftArrow ? previousCategory() : nextCategory())}
+        >
+          {isLeftArrow ? <LeftArrow /> : <RightArrow />}
+        </a>
+      </div>
+    );
+  };
+
   return (
     <div className='layout-container'>
       <div
         className='wrap-container'
-        style={{
-          width: isMobile() ? `${width * categories.length}px` : '100%',
-          transform: isMobile()
-            ? `translateX(${-width * currentIndex}px)`
-            : 'none',
-        }}
+        style={
+          isMobile()
+            ? {
+                width: `${width * categories.length}px`,
+                transform: `translateX(${-width * currentIndex}px)`,
+              }
+            : {}
+        }
       >
         {!isMobile() ? renderDesktopView() : renderMobileView()}
       </div>
       {isMobile() && (
         <div className='slide-area'>
-          {currentIndex !== 0 && (
-            <div className='button-area'>
-              <a onClick={() => previousCategory()}>
-                <LeftArrow />
-              </a>
-            </div>
-          )}
+          {currentIndex !== 0 && renderArrowItem(true)}
           <div className='space-area' />
-          {currentIndex !== categories.length - 1 && (
-            <div className='button-area'>
-              <a onClick={() => nextCategory()}>
-                <RightArrow />
-              </a>
-            </div>
-          )}
+          {currentIndex !== categories.length - 1 && renderArrowItem(false)}
         </div>
       )}
-      {isMobile() && (
-        <div className='indicator-view'>
-          {categories.map((id, index) => (
-            <div
-              key={index}
-              className={
-                currentIndex === index
-                  ? 'dot-indicator selected'
-                  : 'dot-indicator'
-              }
-            ></div>
-          ))}
-        </div>
-      )}
+      {isMobile() && renderIndicator()}
     </div>
   );
 };

@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {
-  categoriesData,
-  detailCategories,
-  colors,
-} from '../ViewModel/DataMockup';
+import React from 'react';
+import { detailCategories, colors } from '../ViewModel/DataMockup';
 import '../Styles/CategoryStyle.css';
 
 const ChildCategoryComponent = ({ idCategory }) => {
