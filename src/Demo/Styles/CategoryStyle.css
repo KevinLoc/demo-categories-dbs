@@ -1,19 +1,5 @@
-@media only screen and (max-width: 768px) {
-  .wrap-container {
-    flex-direction: row;
-    display: flex;
-    transition: transform 1s;
-    transform: none;
-  }
-  .container  {
-    width: 100%;
-    padding: 1rem;
-    margin: 0;
-  }
-}
-
 .layout-container {
-  min-width: 375px;
+  min-width: 320px;
   margin: auto;
   overflow: hidden;
   width: 100%; 
@@ -158,4 +144,22 @@
   background-color: transparent;
   border: transparent;
   cursor:pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrap-container {
+    flex-direction: row;
+    display: flex;
+    transition: transform 1s;
+    transform: none;
+  }
+  .container  {
+    width: 100%;
+    padding: 1rem;
+    margin: 3rem 0 ;
+  }
+  .slide-area{
+    left: 1rem ;
+    right: 1rem ;
+  }
 }

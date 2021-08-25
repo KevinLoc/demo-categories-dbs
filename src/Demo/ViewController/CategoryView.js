@@ -4,7 +4,7 @@ import { categoriesData } from '../ViewModel/DataMockup';
 import useWindowSize from '../Utils/useWindowSize';
 import { ReactComponent as LeftArrow } from '../Icons//leftArrow.svg';
 import { ReactComponent as RightArrow } from '../Icons//rightArrow.svg';
-import ChildCategoryComponent from '../Components/ChildCategoryComponent';
+import DetailCategoryComponent from '../Components/DetailCategoryComponent';
 
 const Category = () => {
   const { width } = useWindowSize();
@@ -31,6 +31,19 @@ const Category = () => {
     }
   };
 
+  const renderIconView = (icon) => {
+    return <div className='icon-category'>{icon}</div>;
+  };
+
+  const renderHeaderCategory = (category) => {
+    return (
+      <>
+        <span className='category-title'>{category.title}</span>
+        <p className='category-desc'>{category.description}</p>
+      </>
+    );
+  };
+
   const renderDesktopView = () => {
     return categories.map((category, index) => (
       <div
@@ -39,11 +52,10 @@ const Category = () => {
         data-testid={`category-id-${index}`}
       >
         <div className='ordered-list'>{index + 1}</div>
-        <div className='icon-category'>{category.iconCategory}</div>
+        {renderIconView(category.iconCategory)}
         <div className='catergory-view'>
-          <span className='category-title'>{category.title}</span>
-          <p className='category-desc'>{category.description}</p>
-          <ChildCategoryComponent idCategory={index} />
+          {renderHeaderCategory(category)}
+          <DetailCategoryComponent idCategory={index} />
         </div>
       </div>
     ));
@@ -60,12 +72,11 @@ const Category = () => {
           <div className='top-area-mobile'>
             <div className='ordered-list'>{index + 1}</div>
             <div className='top-area-mobile-title'>
-              <span className='category-title'>{category.title}</span>
-              <p className='category-desc'>{category.description}</p>
+              {renderHeaderCategory(category)}
             </div>
           </div>
-          <div className='icon-category'>{category.iconCategory}</div>
-          <ChildCategoryComponent idCategory={index} />
+          {renderIconView(category.iconCategory)}
+          <DetailCategoryComponent idCategory={index} />
         </div>
       </div>
     ));
@@ -92,6 +103,9 @@ const Category = () => {
     return (
       <div className='button-area'>
         <button
+          data-testid={
+            isLeftArrow ? `arrow-button-previous` : `arrow-button-next`
+          }
           className='arrow-btn'
           onClick={() => (isLeftArrow ? previousCategory() : nextCategory())}
         >
