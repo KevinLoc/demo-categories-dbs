@@ -118,6 +118,7 @@ const Category = () => {
   return (
     <div className='layout-container'>
       <div
+        data-testid={`wrap-container`}
         className='wrap-container'
         style={
           isMobile()
