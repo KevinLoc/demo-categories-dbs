@@ -37,7 +37,7 @@ export const detailCategories = [
         id: 0,
         title: `Home Loan Details`,
         data: [
-          { id: 1, title: 'Home Loan', detail: 'SGD 500,000' },
+          { id: 1, title: 'Home Loan', detail: 'SGD 300,000' },
           { id: 2, title: 'Loan Tenure', detail: '25 Years' },
           { id: 3, title: 'Interest Rate', detail: '3%' },
         ],
@@ -46,7 +46,7 @@ export const detailCategories = [
         id: 1,
         title: `Policy Details`,
         data: [
-          { id: 1, title: 'Home Loan', detail: 'SGD 500,000' },
+          { id: 1, title: 'Home Loan', detail: 'SGD 400,000' },
           { id: 2, title: 'Loan Tenure', detail: '25 Years' },
           { id: 3, title: 'Interest Rate', detail: '3%' },
         ],
@@ -69,7 +69,7 @@ export const detailCategories = [
         id: 0,
         title: `Home Loan Details`,
         data: [
-          { id: 1, title: 'Home Loan', detail: 'SGD 500,000' },
+          { id: 1, title: 'Home Loan', detail: 'SGD 550,000' },
           { id: 2, title: 'Loan Tenure', detail: '25 Years' },
           { id: 3, title: 'Interest Rate', detail: '3%' },
         ],
@@ -78,7 +78,7 @@ export const detailCategories = [
         id: 1,
         title: `Policy Details`,
         data: [
-          { id: 1, title: 'Home Loan', detail: 'SGD 500,000' },
+          { id: 1, title: 'Home Loan', detail: 'SGD 600,000' },
           { id: 2, title: 'Loan Tenure', detail: '25 Years' },
           { id: 3, title: 'Interest Rate', detail: '3%' },
         ],

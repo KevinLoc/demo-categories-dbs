@@ -11,7 +11,7 @@ const ChildCategoryComponent = ({ idCategory }) => {
         <div
           key={indexList}
           className='category-box-detail'
-          data-testid={`content-category-${indexList}`}
+          data-testid={`content-category-${idCategory}`}
           id={`content-category-${indexList}`}
           style={
             listDetail.length > 1
@@ -26,7 +26,7 @@ const ChildCategoryComponent = ({ idCategory }) => {
             {item.data.map((childItem, index) => (
               <div
                 key={index}
-                data-testid={`child-content-category-${indexList}-${index}`}
+                data-testid={`child-content-category-${idCategory}-${indexList}-${index}`}
                 className='col-content'
                 style={
                   styleLayout === 'col' && item.data.length > 1
