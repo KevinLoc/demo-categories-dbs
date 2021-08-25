@@ -154,3 +154,8 @@
 .selected {
   background-color: #ff3e3e;
 }
+.arrow-btn{
+  background-color: transparent;
+  border: transparent;
+  cursor:pointer;
+}

@@ -8,7 +8,7 @@ import ChildCategoryComponent from '../Components/ChildCategoryComponent';
 
 const Category = () => {
   const { width } = useWindowSize();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndicatorIndex, setCurrentIndicatorIndex] = useState(0);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -20,16 +20,17 @@ const Category = () => {
   };
 
   const previousCategory = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+    if (currentIndicatorIndex > 0) {
+      setCurrentIndicatorIndex(currentIndicatorIndex - 1);
     }
   };
 
   const nextCategory = () => {
-    if (currentIndex < categories.length - 1) {
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndicatorIndex < categories.length - 1) {
+      setCurrentIndicatorIndex(currentIndicatorIndex + 1);
     }
   };
+
   const renderDesktopView = () => {
     return categories.map((category, index) => (
       <div
@@ -77,7 +78,7 @@ const Category = () => {
           <div
             key={index}
             className={
-              currentIndex === index
+              currentIndicatorIndex === index
                 ? 'dot-indicator selected'
                 : 'dot-indicator'
             }
@@ -90,12 +91,12 @@ const Category = () => {
   const renderArrowItem = (isLeftArrow) => {
     return (
       <div className='button-area'>
-        <a
-          href='#'
+        <button
+          className='arrow-btn'
           onClick={() => (isLeftArrow ? previousCategory() : nextCategory())}
         >
           {isLeftArrow ? <LeftArrow /> : <RightArrow />}
-        </a>
+        </button>
       </div>
     );
   };
@@ -108,7 +109,7 @@ const Category = () => {
           isMobile()
             ? {
                 width: `${width * categories.length}px`,
-                transform: `translateX(${-width * currentIndex}px)`,
+                transform: `translateX(${-width * currentIndicatorIndex}px)`,
               }
             : {}
         }
@@ -117,9 +118,10 @@ const Category = () => {
       </div>
       {isMobile() && (
         <div className='slide-area'>
-          {currentIndex !== 0 && renderArrowItem(true)}
+          {currentIndicatorIndex !== 0 && renderArrowItem(true)}
           <div className='space-area' />
-          {currentIndex !== categories.length - 1 && renderArrowItem(false)}
+          {currentIndicatorIndex !== categories.length - 1 &&
+            renderArrowItem(false)}
         </div>
       )}
       {isMobile() && renderIndicator()}
